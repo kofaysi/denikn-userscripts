@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name       Set Audio Playback Speed to 1
-// @namespace  http://your.namespace
+// @name       Change Audio Playback Speed
+// @namespace  http://kofaysi
 // @version    1
 // @description  Sets the playback speed of the audio to 1.5 on page load
 // @match      https://denikn.cz/*
