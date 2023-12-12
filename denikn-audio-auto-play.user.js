@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name       Change Audio Playback Speed and Auto-play
+// @name       Auto-play audios
 // @namespace  https://github.com/kofaysi/
 // @version    1.0
-// @description  Automatically set playback speed and play audio on denikn.cz
+// @description  Automatically play audio on denikn.cz
 // @match      https://denikn.cz/*
 // @grant      none
 // ==/UserScript==
