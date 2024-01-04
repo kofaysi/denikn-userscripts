@@ -41,14 +41,14 @@
         window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     }
 
-    function createToggleButton() {
+    function createToggleButtonInArticle() {
         const button = document.createElement('button');
         button.textContent = 'Disable Scroll'; // Default text
         button.style.position = 'fixed';
         button.style.top = '50%';
         button.style.left = '0';
         button.style.transform = 'translate(0, -50%)';
-        button.style.width = '20%';
+        button.style.width = '10%';
         button.style.height = '10%';
         button.style.backgroundColor = '#0047AB'; // Dark Blue background
         button.style.color = '#FFFFFF'; // Bright White text
@@ -64,7 +64,31 @@
         document.body.appendChild(button);
     }
 
-    createToggleButton();
+//    createToggleButtonInArticle();
+
+    function createToggleButtonInPlayer() {
+        // Find the container where other control buttons are placed
+        const controlsContainer = document.querySelector('.audio2_controls');
+
+        // Create a new button
+        const button = document.createElement('button');
+        button.textContent = 'Disable Scroll'; // Default text
+        button.className = 'audio2_button'; // Use the same class as other buttons for consistent styling
+
+        // Event listener for the button click
+        button.addEventListener('click', function() {
+            scriptEnabled = !scriptEnabled;
+            button.textContent = scriptEnabled ? 'Disable Scroll' : 'Enable Scroll';
+        });
+
+        // Append the button to the controls container
+        if (controlsContainer) {
+            controlsContainer.appendChild(button);
+        }
+    }
+
+    createToggleButtonInPlayer();
+
 
     // Initialize the interval
 
