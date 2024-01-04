@@ -48,7 +48,7 @@
         button.style.top = '50%';
         button.style.left = '0';
         button.style.transform = 'translate(0, -50%)';
-        button.style.width = '10%';
+        button.style.width = '20%';
         button.style.height = '10%';
         button.style.backgroundColor = '#0047AB'; // Dark Blue background
         button.style.color = '#FFFFFF'; // Bright White text
