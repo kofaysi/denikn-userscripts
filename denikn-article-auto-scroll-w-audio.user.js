@@ -93,5 +93,5 @@
     // Initialize the interval
 
     // Update the scroll position every three seconds
-    setInterval(adjustArticleView, 3000);
+    setInterval(adjustArticleView, 5000);
 })();
