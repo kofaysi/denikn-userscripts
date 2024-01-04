@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Article Scroll Based on Audio Position
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/kofaysi/denikn-scripts/edit/main/denikn-article-auto-scroll-w-audio.user.js
 // @version      1.0
 // @description  Scroll view of an article based on audio player position
-// @match      https://denikn.cz/*
+// @match        https://denikn.cz/*
 // @grant        none
-// @author       zroutik@murena.io
+// @author       https://github.com/kofaysi/
 // ==/UserScript==
 
 (function() {
