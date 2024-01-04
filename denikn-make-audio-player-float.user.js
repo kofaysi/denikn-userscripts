@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Audio Player Floating at the Bottom of the Screen
 // @namespace    https://github.com/kofaysi/denikn-scripts/edit/main/denikn-article-auto-scroll-w-audio.user.js
-// @version      1.0
+// @version      2024-01-04
 // @description  Audio Player Floating at the Bottom of the Screen
 // @match        https://denikn.cz/*
 // @grant        none
