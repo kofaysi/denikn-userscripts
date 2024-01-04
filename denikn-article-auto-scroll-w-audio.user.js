@@ -74,11 +74,18 @@
         const button = document.createElement('button');
         button.textContent = 'Disable Scroll'; // Default text
         button.className = 'audio2_button'; // Use the same class as other buttons for consistent styling
+        button.style.color = '#FF4500'; // Orange-red color for "Disable Scroll"
 
         // Event listener for the button click
         button.addEventListener('click', function() {
             scriptEnabled = !scriptEnabled;
-            button.textContent = scriptEnabled ? 'Disable Scroll' : 'Enable Scroll';
+            if (scriptEnabled) {
+                button.textContent = 'Disable Scroll';
+                button.style.color = '#FF4500'; // Orange-red color
+            } else {
+                button.textContent = 'Enable Scroll';
+                button.style.color = '#32CD32'; // Bright green color
+            }
         });
 
         // Append the button to the controls container
