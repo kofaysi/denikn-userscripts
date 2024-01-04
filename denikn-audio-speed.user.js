@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Change Audio Playback Speed
 // @namespace  https://github.com/kofaysi/denikn-scripts/edit/main/denikn-audio-speed.user.js
-// @version    1.0
+// @version    2024-01-04
 // @description  Sets the playback speed of the audio to 1.5 on page load
 // @match      https://denikn.cz/*
 // @grant      none
