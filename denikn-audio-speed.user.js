@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name       Change Audio Playback Speed
-// @namespace  https://github.com/kofaysi/
-// @version    1.2
-// @description  Sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.75
+// @namespace  https://github.com/kofaysi/denikn-scripts/edit/main/denikn-audio-speed.user.js
+// @version    2024-01-04
+// @description  Monitors and sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.5, and saves any changes during the session
 // @match      https://denikn.cz/*
 // @grant      none
 // @author     https://github.com/kofaysi
@@ -11,23 +11,46 @@
 (function() {
     'use strict';
 
-    // Function to set the playback speed
-    function setPlaybackSpeed(speed) {
+    // Function to set playback speed based on localStorage value
+    function setPlaybackSpeed(savedSpeed) {
         var radioButtons = document.querySelectorAll('input[name="mep_0_speed"]');
         for (var i = 0; i < radioButtons.length; i++) {
-            if (radioButtons[i].value === speed) {
+            if (radioButtons[i].value === savedSpeed) {
                 radioButtons[i].click();
-                localStorage.setItem('audioPlaybackSpeed', speed); // Save the selected speed to localStorage
                 break;
             }
+        }
+    }
+
+    // Function to monitor and save any changes in playback speed
+    function monitorSpeedChange() {
+        var radioButtons = document.querySelectorAll('input[name="mep_0_speed"]');
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener('change', function() {
+                if (this.checked) {
+                    var newSpeed = this.value;
+                    localStorage.setItem('audioPlaybackSpeed', newSpeed); // Save the new speed
+                }
+            });
         }
     }
 
     // Get the saved speed from localStorage, default to 1.5 if not set
     var savedSpeed = localStorage.getItem('audioPlaybackSpeed') || "1.75";
 
-    // Apply the saved speed
+    // Apply the saved speed on page load
     setPlaybackSpeed(savedSpeed);
 
-    // Optionally, you could allow the user to change the speed and save the new setting here
+    // Start monitoring for any changes to playback speed
+    monitorSpeedChange();
+
+    // Optional: Regularly check and update playback speed (in case the speed is changed by other means)
+    setInterval(function() {
+        var currentSpeed = document.querySelector('input[name="mep_0_speed"]:checked').value;
+        var savedSpeed = localStorage.getItem('audioPlaybackSpeed') || "1.75";
+        if (currentSpeed !== savedSpeed) {
+            localStorage.setItem('audioPlaybackSpeed', currentSpeed); // Update localStorage if speed has changed
+        }
+    }, 1000); // Check every second
+
 })();
