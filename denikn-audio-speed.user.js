@@ -2,7 +2,7 @@
 // @name       Change Audio Playback Speed
 // @namespace  https://github.com/kofaysi/
 // @version    1.2
-// @description  Sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.5
+// @description  Sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.75
 // @match      https://denikn.cz/*
 // @grant      none
 // @author     https://github.com/kofaysi
@@ -24,7 +24,7 @@
     }
 
     // Get the saved speed from localStorage, default to 1.5 if not set
-    var savedSpeed = localStorage.getItem('audioPlaybackSpeed') || "1.5";
+    var savedSpeed = localStorage.getItem('audioPlaybackSpeed') || "1.75";
 
     // Apply the saved speed
     setPlaybackSpeed(savedSpeed);
