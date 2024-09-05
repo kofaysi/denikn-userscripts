@@ -31,9 +31,15 @@
         }
     });
 
-    function adjustArticleView() {
-        if (!autoScrollAndFloatEnabled) return;
+    function isAudioPlaying() {
+        let audio = document.querySelector('audio');
+        return audio && !audio.paused;
+    }
 
+    function adjustArticleView() {
+        // Check if audio is playing and auto-scroll is enabled
+        if (!autoScrollAndFloatEnabled || !isAudioPlaying()) return;
+        
         // Get the scaleX value of the audio player marker
         const audioMarker = document.querySelector('.audio2_time-current');
         const scaleX = parseFloat(audioMarker.style.transform.match(/scaleX\(([^)]+)\)/)[1]);
