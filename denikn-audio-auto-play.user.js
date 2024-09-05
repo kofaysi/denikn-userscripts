@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Integrated Audio Player Control
 // @namespace    https://github.com/kofaysi/denikn-scripts
-// @version      2024-01-11
+// @version      1.5
 // @description  Autoplay and toggle scrolling text and floating of audio player on denikn.cz
 // @match        https://denikn.cz/*
 // @grant        none
