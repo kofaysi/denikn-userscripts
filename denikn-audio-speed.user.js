@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name       Change Audio Playback Speed
+// @name       Change Audio Playback Speed @denikn.cz
 // @namespace  https://github.com/kofaysi/denikn-scripts/edit/main/denikn-audio-speed.user.js
-// @version    1.3
+// @version    1.4
 // @description  Monitors and sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.5, and saves any changes during the session
 // @match      https://denikn.cz/*
 // @grant      none
