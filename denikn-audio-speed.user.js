@@ -4,8 +4,8 @@
 // @version    1.4
 // @description  Monitors and sets the playback speed of the audio based on the last saved value in localStorage, defaulting to 1.5, and saves any changes during the session
 // @match      https://denikn.cz/*
-// @grant      none
 // @author     https://github.com/kofaysi
+// @grant      none
 // ==/UserScript==
 
 (function() {
