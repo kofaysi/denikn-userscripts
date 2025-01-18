@@ -67,46 +67,6 @@
     // Interval to constantly check the state of autoScrollEnabled
     setInterval(adjustArticleView, adjustArticleViewInterval);
 
-    function createToggleScrollButtonInPlayer() {
-        // Find the container where other control buttons are placed
-        const controlsContainer = document.querySelector('.audio2_controls');
-
-        // Create a new button
-        const button = document.createElement('button');
-        button.className = 'audio2_button audio2_scroll-button'; // Use the same class as other buttons for consistent styling
-
-        // Function to update button text and color
-        function updateButton() {
-            if (autoScrollEnabled) {
-                button.textContent = 'auto-scroll ON';
-                button.style.color = '#32CD32'; // Bright green color
-            } else {
-                button.textContent = 'auto-scroll OFF';
-                button.style.color = '#FF4500'; // Orange-red color
-            }
-        }
-
-        // Initial update
-        updateButton();
-
-        // Event listener for the button click
-        button.addEventListener('click', function() {
-            autoScrollEnabled = !autoScrollEnabled;
-            updateButton();
-        });
-
-        // Append the button to the controls container
-        if (controlsContainer) {
-            controlsContainer.appendChild(button);
-        }
-
-        // Expose the update function so it can be called externally
-        return updateButton;
-    }
-
-//    const updateAutoScrollButton = createToggleScrollButtonInPlayer();
-    // Store the update function for later use
-
        function createToggleScrollAndFloatButtonInPlayer() {
         // Find the container where other control buttons are placed
         const controlsContainer = document.querySelector('.audio2_controls');
@@ -118,10 +78,12 @@
         // Function to update button text and color
         function updateButton() {
             if (autoScrollAndFloatEnabled) {
-                button.textContent = 'auto-scroll & float ON';
+                button.textContent = '🔄↕';
+                button.title = "Toggle auto-scroll and float";
                 button.style.color = '#32CD32'; // Bright green color
             } else {
-                button.textContent = 'auto-scroll & float OFF';
+                button.textContent = '🔄↕';
+                button.title = "Toggle auto-scroll and float";
                 button.style.color = '#FF4500'; // Orange-red color
             }
         }
@@ -146,47 +108,6 @@
 
     const updateAutoScrollAndFloatButton = createToggleScrollAndFloatButtonInPlayer();
     // Store the update function for later use
-
-
-    function createToggleFloatButtonInPlayer() {
-        // Find the container where other control buttons are placed
-        const controlsContainer = document.querySelector('.audio2_controls');
-
-        // Create a new button
-        const button = document.createElement('button');
-        //button.textContent = 'float OFF'; // Default text
-        button.className = 'audio2_button audio2_float-button'; // Use the same class as other buttons for consistent styling
-        //button.style.color = '#FF4500'; // Orange-red color for "Disable Scroll"
-
-        function updateButton() {
-            if (floatEnabled) {
-                button.textContent = 'float ON';
-                button.style.color = '#32CD32'; // Bright green color
-            } else {
-                button.textContent = 'float OFF';
-                button.style.color = '#FF4500'; // Orange-red color
-            }
-        }
-
-        // Initial update
-        updateButton();
-
-        // Event listener for the button click
-        button.addEventListener('click', function() {
-            floatEnabled = !floatEnabled;
-            updateButton();
-        });
-
-        // Append the button to the controls container
-        if (controlsContainer) {
-            controlsContainer.appendChild(button);
-        }
-
-        // Expose the update function so it can be called externally
-        return updateButton;
-    }
-
-//    const updateToggleFloatButton = createToggleFloatButtonInPlayer();
 
     // Add CSS for floating div
     const style = document.createElement('style');
