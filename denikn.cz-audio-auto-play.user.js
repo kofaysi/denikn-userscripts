@@ -78,11 +78,13 @@
         // Function to update button text and color
         function updateButton() {
             if (autoScrollAndFloatEnabled) {
-                button.textContent = '🔄↕';
+                button.textContent = '⟳↕';
+                button.style.fontSize = '16px';
                 button.title = "Toggle auto-scroll and float";
                 button.style.color = '#32CD32'; // Bright green color
             } else {
-                button.textContent = '🔄↕';
+                button.textContent = '⟳↕';
+                button.style.fontSize = '16px';
                 button.title = "Toggle auto-scroll and float";
                 button.style.color = '#FF4500'; // Orange-red color
             }
