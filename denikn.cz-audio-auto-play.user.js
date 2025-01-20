@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Integrated Audio Player Control @denikn.cz
 // @namespace    https://github.com/kofaysi/denikn-userscripts/blob/main/denikn.cz-audio-auto-play.user.js
-// @version      1.9
+// @version      1.10
 // @description  Autoplay and toggle scrolling text and floating of audio player on denikn.cz
 // @match        https://denikn.cz/*
 // @author       https://github.com/kofaysi
@@ -80,11 +80,13 @@
             if (autoScrollAndFloatEnabled) {
                 button.textContent = '⟳';
                 button.style.fontSize = '28px';
+                button.style.fontWeight = 'bold';
                 button.title = "Toggle auto-scroll and float";
                 button.style.color = '#32CD32'; // Bright green color
             } else {
-                button.textContent = '⟳↕';
-                button.style.fontSize = '16px';
+                button.textContent = '⟳';
+                button.style.fontSize = '28px';
+                button.style.fontWeight = 'bold';
                 button.title = "Toggle auto-scroll and float";
                 button.style.color = '#FF4500'; // Orange-red color
             }
