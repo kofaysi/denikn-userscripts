@@ -44,7 +44,7 @@
         const audioMarker = document.querySelector('.audio2_time-current');
         const scaleX = parseFloat(audioMarker.style.transform.match(/scaleX\(([^)]+)\)/)[1]);
 
-        const article = document.querySelector('.a_single.a_single__post.a_single__default');
+        const article = document.querySelector('.a_single.a_single__post'); // other classes are .a_single__default and .a_single__full (alternating)
         const articleRect = article.getBoundingClientRect();
 
         const articleStart = articleRect.top + window.pageYOffset;
