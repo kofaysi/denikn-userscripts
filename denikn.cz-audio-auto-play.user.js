@@ -84,11 +84,11 @@
                 button.title = "Toggle auto-scroll and float";
                 button.style.color = '#32CD32'; // Bright green color
             } else {
-                button.textContent = '⟳';
+                button.innerHTML = '<span style="text-decoration: line-through;">⟳</span>'; // Strikethrough refresh
                 button.style.fontSize = '28px';
                 button.style.fontWeight = 'bold';
                 button.title = "Toggle auto-scroll and float";
-                button.style.color = '#FF4500'; // Orange-red color
+                button.style.color = 'rgb(191,33,52)'; // New red color
             }
         }
 
