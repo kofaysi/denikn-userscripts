@@ -41,8 +41,9 @@
         if (!autoScrollAndFloatEnabled || !isAudioPlaying()) return;
         
         // Get the scaleX value of the audio player marker
-        const audioMarker = document.querySelector('.audio2_time-current');
-        const scaleX = parseFloat(audioMarker.style.transform.match(/scaleX\(([^)]+)\)/)[1]);
+        const audio = document.querySelector('.n3_audio audio, audio#n3_audio');
+        if (!audio || !isFinite(audio.duration) || audio.duration <= 0) return;
+        const scaleX = audio.currentTime / audio.duration;
 
         const article = document.querySelector('.a_single.a_single__post'); // other classes are .a_single__default and .a_single__full (alternating)
         const articleRect = article.getBoundingClientRect();
@@ -69,12 +70,11 @@
 
        function createToggleScrollAndFloatButtonInPlayer() {
         // Find the container where other control buttons are placed
-        const controlsContainer = document.querySelector('.audio2_controls');
+        const controlsContainer = document.querySelector('.n3_audio');
 
         // Create a new button
         const button = document.createElement('button');
-        button.className = 'audio2_button audio2_scroll_and_float-button'; // Use the same class as other buttons for consistent styling
-
+        button.className = 'n3_audio_button audio2_scroll_and_float-button';
         // Function to update button text and color
         function updateButton() {
             if (autoScrollAndFloatEnabled) {
@@ -130,7 +130,7 @@
 
     // Function to toggle the floating state of the div
     function toggleFloatingDiv() {
-        const audioDiv = document.querySelector('.audio2');
+        const audioDiv = document.querySelector('.n3_audio');
         if (audioDiv) {
             if (autoScrollAndFloatEnabled) {
                 audioDiv.classList.add('floating-audio2');
